@@ -4,6 +4,31 @@
   
   
   <entry>
+    <title>【建站日志】关于giscus评论系统故障的报告</title>
+    <link href="/posts/23042101/"/>
+    <url>/posts/23042101/</url>
+    
+    <content type="html"><![CDATA[<p>2023年4月20日夜至21日凌晨，我在测试giscus评论系统，发现如下故障：</p><p>（一）发帖自动顶贴，且不可取消；<br>（二）发帖有延迟，延迟期间多次发帖会在仓库的讨论区新开多个讨论。延迟期结束后，会显示最后一个讨论。</p><p>尚未查明故障原因。需要做进一步测试。</p><hr><p><strong>附件：为什么采用giscus评论系统？</strong><br>一开始我采用的是Waline评论系统，但是该系统在中国大陆无法正常访问，只能放弃。现在暂时使用giscus评论系统，不过该系统需要Github账号登录，对部分访客来说殊为不便，后期可能会更换新的评论系统。主要困难是我的网站用的是github.io域名，没有独立域名，有的功能需要独立域名才能实现。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>建站日志</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>giscus</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>网上让平庐重建记</title>
     <link href="/posts/23042001/"/>
     <url>/posts/23042001/</url>
