@@ -16,24 +16,26 @@
   <meta name="author" content="让平">
   <meta name="keywords" content="">
   
-    <meta name="description" content="2023年4月20日夜至21日凌晨，我在测试giscus评论系统，发现如下故障： （一）发帖自动顶贴，且不可取消；（二）发帖有延迟，延迟期间多次发帖会在仓库的讨论区新开多个讨论。延迟期结束后，会显示最后一个讨论。 尚未查明故障原因。需要做进一步测试。  附件：为什么采用giscus评论系统？一开始我采用的是Waline评论系统，但是该系统在中国大陆无法正常访问，只能放弃。现在暂时使用giscus评">
+    <meta name="description" content="本章通过双变量回归分析，介绍了回归分析中的一些基本思想，包括条件期望、总体回归函数（PRF）、样本回归函数（SRF）、“线性”的涵义、随机干扰项与残差等概念。更为一般的多元回归分析，在许多方面都是双变量情形的逻辑推广。  条件期望考虑一个总体，解释变量为$X$，因变量为$Y$。给定一个$X$值，我们可以取出该总体的一个子总体，并得到一组对应的$Y$值。这个子总体的均值就是条件期望值，用符号表示为">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【建站日志】关于giscus评论系统故障的报告">
-<meta property="og:url" content="http://gamandromeda.github.io/posts/23042101/index.html">
+<meta property="og:title" content="计量经济学笔记（三） 双变量回归分析：一些基本思想">
+<meta property="og:url" content="http://gamandromeda.github.io/posts/23042401/index.html">
 <meta property="og:site_name" content="网上让平庐">
-<meta property="og:description" content="2023年4月20日夜至21日凌晨，我在测试giscus评论系统，发现如下故障： （一）发帖自动顶贴，且不可取消；（二）发帖有延迟，延迟期间多次发帖会在仓库的讨论区新开多个讨论。延迟期结束后，会显示最后一个讨论。 尚未查明故障原因。需要做进一步测试。  附件：为什么采用giscus评论系统？一开始我采用的是Waline评论系统，但是该系统在中国大陆无法正常访问，只能放弃。现在暂时使用giscus评">
+<meta property="og:description" content="本章通过双变量回归分析，介绍了回归分析中的一些基本思想，包括条件期望、总体回归函数（PRF）、样本回归函数（SRF）、“线性”的涵义、随机干扰项与残差等概念。更为一般的多元回归分析，在许多方面都是双变量情形的逻辑推广。  条件期望考虑一个总体，解释变量为$X$，因变量为$Y$。给定一个$X$值，我们可以取出该总体的一个子总体，并得到一组对应的$Y$值。这个子总体的均值就是条件期望值，用符号表示为">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-04-20T16:20:00.000Z">
-<meta property="article:modified_time" content="2023-04-21T13:42:50.626Z">
+<meta property="article:published_time" content="2023-04-24T05:03:42.000Z">
+<meta property="article:modified_time" content="2023-04-24T05:03:42.122Z">
 <meta property="article:author" content="让平">
-<meta property="article:tag" content="giscus">
+<meta property="article:tag" content="计量经济学">
+<meta property="article:tag" content="基本思想">
+<meta property="article:tag" content="双变量回归分析">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Serif+SC:500">
   
-  <title>【建站日志】关于giscus评论系统故障的报告 - 网上让平庐</title>
+  <title>计量经济学笔记（三） 双变量回归分析：一些基本思想 - 网上让平庐</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -224,7 +226,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle">【建站日志】关于giscus评论系统故障的报告</span>
+            <span id="subtitle">计量经济学笔记（三） 双变量回归分析：一些基本思想</span>
           
         </div>
 
@@ -235,8 +237,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-04-21 00:20" pubdate>
-          2023年4月21日
+        <time datetime="2023-04-24 13:03" pubdate>
+          2023年4月24日
         </time>
       </span>
     
@@ -247,7 +249,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          290 字
+          1948 字
         
       </span>
     
@@ -258,7 +260,7 @@
         
         
         
-          1 分钟
+          4 分钟
         
       </span>
     
@@ -296,17 +298,30 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">【建站日志】关于giscus评论系统故障的报告</h1>
+            <h1 style="display: none">计量经济学笔记（三） 双变量回归分析：一些基本思想</h1>
             
             
               <div class="markdown-body">
                 
-                <p>2023年4月20日夜至21日凌晨，我在测试giscus评论系统，发现如下故障：</p>
-<p>（一）发帖自动顶贴，且不可取消；<br>（二）发帖有延迟，延迟期间多次发帖会在仓库的讨论区新开多个讨论。延迟期结束后，会显示最后一个讨论。</p>
-<p>尚未查明故障原因。需要做进一步测试。</p>
+                <blockquote>
+<p>本章通过双变量回归分析，介绍了回归分析中的一些基本思想，包括条件期望、总体回归函数（PRF）、样本回归函数（SRF）、“线性”的涵义、随机干扰项与残差等概念。更为一般的多元回归分析，在许多方面都是双变量情形的逻辑推广。</p>
+</blockquote>
+<h3 id="条件期望"><a href="#条件期望" class="headerlink" title="条件期望"></a>条件期望</h3><p>考虑一个总体，解释变量为$X$，因变量为$Y$。给定一个$X$值，我们可以取出该总体的一个子总体，并得到一组对应的$Y$值。这个子总体的均值就是<strong>条件期望值</strong>，用符号表示为$E(Y|X)$，读作“给定$X$值下$Y$的期望值”。而总体均值$E(Y)$称为<strong>无条件期望值</strong>。</p>
+<p>通过对解释变量$X$的了解，我们能够更准确地预测因变量$Y$的均值，也就是说，条件期望值比无条件期望值更加准确，这或许就是回归分析的本质。</p>
+<h3 id="总体回归函数（PRF）"><a href="#总体回归函数（PRF）" class="headerlink" title="总体回归函数（PRF）"></a>总体回归函数（PRF）</h3><p>将总体条件均值连成线，就得到了<strong>总体回归线</strong>，或<strong>总体回归曲线</strong>。</p>
+<p>对于总体而言，每一条件均值$E(Y|X_i)$都是$X_i$的一个函数，其中$X_i$是$X$的某个给定值。用符号表示为$$E(Y|X_i)&#x3D;f(X_i)$$这个函数被称为条件期望函数（CEF）、<strong>总体回归函数</strong>（PRF）或总体回归（PR）。总体回归函数就是总体回归曲线的表达式。</p>
+<p>PRF采取何种形式，是一个重要的问题。我们可以假定PRF是$X_i$的线性函数，其形式为：$$E(Y|X_i)&#x3D;\beta_1+\beta_2X_i$$其中$\beta$为回归系数。在回归分析中，我们通常根据对变量的观测，估计回归系数的值。</p>
+<p>上面我们构建了一个线性回归模型。“线性”一词有两种解释，一是对变量为线性，二是对参数为线性。在线性回归中，我们采用第二种解释，即线性回归是线性于参数$\beta$的回归。</p>
+<h3 id="PRF的随机设定"><a href="#PRF的随机设定" class="headerlink" title="PRF的随机设定"></a>PRF的随机设定</h3><p>给定$X_i$，总体的条件期望$E(Y|X_i)$是非随机的，但是给定$X_i$下个别的$Y_i$取值是围绕其条件均值随机分布的。通过引入离差，我们将随机因素囊括进PRF的设定中。离差的表达式为：$$u_i&#x3D;Y_i-E(Y|X_i)$$稍作变形可得：$$Y_i&#x3D;E(Y|X_i)+u_i$$我们可以发现，因变量$Y$的某一特定取值由两部分组成：<br>（1）系统性或确定性成分，即给定$X_i$下的条件均值；<br>（2）非系统性或随机性成分，即离差$u_i$，它是一个不可观测的随机变量，也叫作随机干扰项或随机误差项。</p>
+<p>通过对上式取期望，我们可以推出：$$E(u_i|X_i)&#x3D;0$$</p>
+<p>随机干扰项$u_i$是模型遗漏的而又一起影响着因变量的全部变量的替代物。我们为什么不把这些变量清晰地引入模型中呢？理由是多方面的：<br>（一）<strong>理论的含糊性。</strong>即我们并不能明确其他影响因素是什么。<br>（二）<strong>数据的欠缺。</strong>即使我们明知有一些变量被模型所忽略了，但是由于得不到相关数据，我们别无选择，只能放弃将它们引入模型。<br>（三）<strong>核心变量与周边变量。</strong>变量的重要性有主次之别，对于那些对因变量影响很小的变量，我们不应该耗费不必要的成本将它们引入模型。<br>（四）<strong>内在的随机性。</strong>这里指的是纯粹的随机性，即使所有相关变量都引入模型，也无法消除。<br>（五）<strong>糟糕的替代变量。</strong>在实际研究中，模型中的变量无法准确观测，我们往往需要寻找替代变量，这就带来了测量误差问题，干扰项可以用来代表测量误差。<br>（六）<strong>错误的函数形式。</strong>我们常常无法确定解释变量和因变量之间的函数形式，这也会带来随机误差。</p>
+<h3 id="样本回归函数（SRF）"><a href="#样本回归函数（SRF）" class="headerlink" title="样本回归函数（SRF）"></a>样本回归函数（SRF）</h3><p>PRF是一个理想化的概念。实际上，人们很少得知他们研究的整个总体，通常只拥有总体的一个观测样本。这就需要通过SRF去估计PRF。</p>
+<p>样本回归函数（SRF）无非是把总体的情形对应到样本中来，把某些参数用估计量替代。注意，估计量是一种规则，告诉人们如何用手中的样本估计总体参数；在实际应用中，我们会算出估计值。估计量是随机的（因为抽样是随机的），但估计值是非随机的（给定抽样，则估计值也就随之确定）。</p>
+<p>表示估计量的方法，通常是在总体参数的符号上方加上一个 $\hat{}$ 符号，读作<em>hat</em>或者帽，比如离差的估计量——残差的表示方法为$\hat{u_i}$。但是，$\hat{Y_i}$是$E(Y|X_i)$的估计量，$Y_i$由实际情况给定，无所谓估计不估计。</p>
+<p>SRF是PRF的一个近似，我们进行回归分析的主要目的就是，采取一种尽量完美的规则，用SRF<sup id="fnref:1" class="footnote-ref"><a href="#fn:1" rel="footnote"><span class="hint--top hint--rounded" aria-label="这是随机形式的SRF，还可以写成非随机形式（条件期望形式）：$$\hat{Y_i}=\hat{\beta_1}+\hat{\beta_2}X_i$$">[1]</span></a></sup>：$$Y_i&#x3D;\hat{\beta_1}+\hat{\beta_2}X_i+\hat{u_i}$$尽量精确地估计PRF：$$Y_i&#x3D;\beta_1+\beta_2X_i+u_i$$</p>
 <hr>
-<p><strong>附件：为什么采用giscus评论系统？</strong><br>一开始我采用的是Waline评论系统，但是该系统在中国大陆无法正常访问，只能放弃。现在暂时使用giscus评论系统，不过该系统需要Github账号登录，对部分访客来说殊为不便，后期可能会更换新的评论系统。主要困难是我的网站用的是github.io域名，没有独立域名，有的功能需要独立域名才能实现。</p>
-
+<section class="footnotes"><div class="footnote-list"><ol><li><span id="fn:1" class="footnote-text"><span>这是随机形式的SRF，还可以写成非随机形式（条件期望形式）：$$\hat{Y_i}&#x3D;\hat{\beta_1}+\hat{\beta_2}X_i$$
+<a href="#fnref:1" rev="footnote" class="footnote-backref"> ↩</a></span></span></li></ol></div></section>
                 
               </div>
             
@@ -324,8 +339,15 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%BB%BA%E7%AB%99%E6%97%A5%E5%BF%97/" class="category-chain-item">建站日志</a>
+  <a href="/categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/" class="category-chain-item">经济学</a>
   
+  
+    <span>></span>
+    
+  <a href="/categories/%E7%BB%8F%E6%B5%8E%E5%AD%A6/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/" class="category-chain-item">计量经济学</a>
+  
+  
+
   
 
       </span>
@@ -339,7 +361,11 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/giscus/">#giscus</a>
+        <a href="/tags/%E8%AE%A1%E9%87%8F%E7%BB%8F%E6%B5%8E%E5%AD%A6/">#计量经济学</a>
+      
+        <a href="/tags/%E5%9F%BA%E6%9C%AC%E6%80%9D%E6%83%B3/">#基本思想</a>
+      
+        <a href="/tags/%E5%8F%8C%E5%8F%98%E9%87%8F%E5%9B%9E%E5%BD%92%E5%88%86%E6%9E%90/">#双变量回归分析</a>
       
     </div>
   
@@ -351,8 +377,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>【建站日志】关于giscus评论系统故障的报告</div>
-      <div>http://gamandromeda.github.io/posts/23042101/</div>
+      <div>计量经济学笔记（三） 双变量回归分析：一些基本思想</div>
+      <div>http://gamandromeda.github.io/posts/23042401/</div>
     </div>
     <div class="license-meta">
       
@@ -364,7 +390,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2023年4月21日</div>
+          <div>2023年4月24日</div>
         </div>
       
       
@@ -396,18 +422,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/posts/23042102/" title="【建站日志】更换字体，兼谈好友停更">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">【建站日志】更换字体，兼谈好友停更</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/posts/23042001/" title="网上让平庐重建记">
-                        <span class="hidden-mobile">网上让平庐重建记</span>
+                      <a href="/posts/23042304/" title="日记其一：苟日新，日日新，又日新">
+                        <span class="hidden-mobile">日记其一：苟日新，日日新，又日新</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -508,6 +528,12 @@
 
 
   
+
+
+  
+  
+
+
 
 
 
@@ -687,6 +713,49 @@
 
 
   <script>Fluid.plugins.imageCaption();</script>
+
+  
+      <script>
+        if (!window.MathJax) {
+          window.MathJax = {
+            tex    : {
+              inlineMath: { '[+]': [['$', '$']] }
+            },
+            loader : {
+              load: ['ui/lazy']
+            },
+            options: {
+              renderActions: {
+                insertedScript: [200, () => {
+                  document.querySelectorAll('mjx-container').forEach(node => {
+                    let target = node.parentNode;
+                    if (target.nodeName.toLowerCase() === 'li') {
+                      target.parentNode.classList.add('has-jax');
+                    }
+                  });
+                }, '', false]
+              }
+            }
+          };
+        } else {
+          MathJax.startup.document.state(0);
+          MathJax.texReset();
+          MathJax.typeset();
+          MathJax.typesetPromise();
+        }
+
+        Fluid.events.registerRefreshCallback(function() {
+          if ('MathJax' in window && MathJax.startup.document && typeof MathJax.startup.document.state === 'function') {
+            MathJax.startup.document.state(0);
+            MathJax.texReset();
+            MathJax.typeset();
+            MathJax.typesetPromise();
+          }
+        });
+      </script>
+    
+
+  <script  src="https://lib.baomitu.com/mathjax/3.2.2/es5/tex-mml-chtml.js" ></script>
 
   <script  src="/js/local-search.js" ></script>
 
