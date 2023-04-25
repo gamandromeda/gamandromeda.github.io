@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+
+<head>
+  <meta name="generator" content="Hexo 6.3.0">
+  <meta name="hexo-theme" content="https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5">
+  <meta charset="utf-8">
+  
+
+  <meta http-equiv='x-dns-prefetch-control' content='on' />
+  <link rel='dns-prefetch' href='https://gcore.jsdelivr.net'>
+  <link rel="preconnect" href="https://gcore.jsdelivr.net" crossorigin>
+  <link rel='dns-prefetch' href='//unpkg.com'>
+
+  <meta name="renderer" content="webkit">
+  <meta name="force-rendering" content="webkit">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+  <meta name="HandheldFriendly" content="True" >
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="theme-color" content="#f8f8f8">
+  
+  <title>计量经济学基础：三、双变量回归分析：一些基本思想 - 让平庐</title>
+
+  
+    <meta name="description" content="本章通过双变量回归分析，介绍了回归分析中的一些基本思想，包括条件期望、总体回归函数（PRF）、样本回归函数（SRF）、“线性”的涵义、随机干扰项与残差等概念。更为一般的多元回归分析，在许多方面都是双变量情形的逻辑推广。  条件期望 考虑一个总体，解释变量为$X$，因变量为$Y$。给定一个$X$值，我们可以取出该总体的一个子总体，并得到一组对应的$Y$值。这个子总体的均值就是条件期望值，用符号表示">
+<meta property="og:type" content="website">
+<meta property="og:title" content="三、双变量回归分析：一些基本思想">
+<meta property="og:url" content="http://gamandromeda.github.io/wiki/econometrics/econometrics-3.html">
+<meta property="og:site_name" content="让平庐">
+<meta property="og:description" content="本章通过双变量回归分析，介绍了回归分析中的一些基本思想，包括条件期望、总体回归函数（PRF）、样本回归函数（SRF）、“线性”的涵义、随机干扰项与残差等概念。更为一般的多元回归分析，在许多方面都是双变量情形的逻辑推广。  条件期望 考虑一个总体，解释变量为$X$，因变量为$Y$。给定一个$X$值，我们可以取出该总体的一个子总体，并得到一组对应的$Y$值。这个子总体的均值就是条件期望值，用符号表示">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-24T05:03:42.000Z">
+<meta property="article:modified_time" content="2023-04-25T12:02:12.457Z">
+<meta property="article:author" content="让平">
+<meta property="article:tag" content="计量经济学">
+<meta property="article:tag" content="双变量回归分析">
+<meta property="article:tag" content="基本思想">
+<meta name="twitter:card" content="summary">
+  
+  
+
+  <!-- feed -->
+  
+    <link rel="alternate" href="/atom.xml" title="让平庐" type="application/atom+xml">
+  
+
+  
+    
+<link rel="stylesheet" href="/css/main.css">
+
+  
+
+  
+    <link rel="shortcut icon" href="/img/avatar.png">
+  
+
+  
+
+  
+
+
+  
+</head>
+
+<body>
+  
+
+
+
+
+  <div class='l_body' id='start'>
+    <aside class='l_left' layout='wiki'>
+    
+
+  
+
+
+
+
+<div class="widgets"><widget class="widget-wrapper logo-wrap wiki"><div class="widget-body"><a style="filter: grayscale(100%)" class="wiki-home cap" href="/"><svg aria-hidden="true" viewBox="0 0 16 16" width="1rem" height="1rem" fill="currentColor"><path fill-rule="evenodd" d="M7.78 12.53a.75.75 0 01-1.06 0L2.47 8.28a.75.75 0 010-1.06l4.25-4.25a.75.75 0 011.06 1.06L4.81 7h7.44a.75.75 0 010 1.5H4.81l2.97 2.97a.75.75 0 010 1.06z"></path></svg>所有项目</a><a class="title" href="/wiki/econometrics/index.html"><div class="main" ff="title">计量经济学基础</div></a></div></widget>
+<widget class="widget-wrapper search"><div class="widget-body"><div class="search-wrapper" id="search"><form class="search-form"><input type="text" class="search-input" id="search-input" data-filter="/wiki/econometrics/" placeholder="在 /wiki/econometrics/ 中搜索"><svg t="1670596976048" class="icon search-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2676" width="200" height="200"><path d="M938.2 832.6L723.8 618.1c-2.5-2.5-5.3-4.4-7.9-6.4 36.2-55.6 57.3-121.8 57.3-193.1C773.3 222.8 614.6 64 418.7 64S64 222.8 64 418.6c0 195.9 158.8 354.6 354.6 354.6 71.3 0 137.5-21.2 193.2-57.4 2 2.7 3.9 5.4 6.3 7.8L832.5 938c14.6 14.6 33.7 21.9 52.8 21.9 19.1 0 38.2-7.3 52.8-21.8 29.2-29.1 29.2-76.4 0.1-105.5M418.7 661.3C284.9 661.3 176 552.4 176 418.6 176 284.9 284.9 176 418.7 176c133.8 0 242.6 108.9 242.6 242.7 0 133.7-108.9 242.6-242.6 242.6" p-id="2677"></path></svg></form><div id="search-result"></div><div class="search-no-result">没有找到内容！</div></div></div></widget>
+
+
+
+
+<widget class="widget-wrapper toc multi" id="data-toc"><div class="widget-header cap dis-select"><span class="name">三、双变量回归分析：一些基本思想</span></div><div class="widget-body fs14"><div class="doc-tree"><a class="doc-tree-link" href="/wiki/econometrics/index.html#start"><span class="toc-text">序言</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/wiki/econometrics/econometrics-1.html"><span class="toc-text">一、引言</span></a></div><div class="doc-tree"><a class="doc-tree-link" href="/wiki/econometrics/econometrics-2.html"><span class="toc-text">二、回归分析的性质</span></a></div><div class="doc-tree active"><a class="doc-tree-link active" href="/wiki/econometrics/econometrics-3.html"><span class="toc-text">三、双变量回归分析：一些基本思想</span></a><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E6%9C%9F%E6%9C%9B"><span class="toc-text">条件期望</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E4%BD%93%E5%9B%9E%E5%BD%92%E5%87%BD%E6%95%B0%EF%BC%88PRF%EF%BC%89"><span class="toc-text">总体回归函数（PRF）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PRF%E7%9A%84%E9%9A%8F%E6%9C%BA%E8%AE%BE%E5%AE%9A"><span class="toc-text">PRF的随机设定</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A0%B7%E6%9C%AC%E5%9B%9E%E5%BD%92%E5%87%BD%E6%95%B0%EF%BC%88SRF%EF%BC%89"><span class="toc-text">样本回归函数（SRF）</span></a></li></ol></div></div></widget>
+
+
+
+
+</div>
+
+
+    </aside>
+    <div class='l_main'>
+      
+
+      
+
+  
+  
+<div class="bread-nav fs12"><div id="breadcrumb"><a class="cap breadcrumb" id="home" href="/">主页</a><span class="sep"></span><a class="cap breadcrumb" id="menu" href="/wiki/">项目</a><span class="sep"></span><a class="cap breadcrumb" id="proj" href="/wiki/econometrics/index.html">计量经济学基础</a></div><div id="post-meta">更新于&nbsp;<time datetime="2023-04-25T12:02:12.457Z">2023-04-25</time></div></div>
+
+  <article class='md-text content wiki'>
+  <h1 class="article-title"><span>三、双变量回归分析：一些基本思想</span></h1>
+  <blockquote>
+<p>本章通过双变量回归分析，介绍了回归分析中的一些基本思想，包括条件期望、总体回归函数（PRF）、样本回归函数（SRF）、“线性”的涵义、随机干扰项与残差等概念。更为一般的多元回归分析，在许多方面都是双变量情形的逻辑推广。</p>
+</blockquote>
+<h2 id="条件期望">条件期望</h2>
+<p>考虑一个总体，解释变量为$X$，因变量为$Y$。给定一个$X$值，我们可以取出该总体的一个子总体，并得到一组对应的$Y$值。这个子总体的均值就是<strong>条件期望值</strong>，用符号表示为$E(Y|X)$，读作“给定$X$值下$Y$的期望值”。而总体均值$E(Y)$称为<strong>无条件期望值</strong>。</p>
+<p>通过对解释变量$X$的了解，我们能够更准确地预测因变量$Y$的均值，也就是说，条件期望值比无条件期望值更加准确，这或许就是回归分析的本质。</p>
+<h2 id="总体回归函数（PRF）">总体回归函数（PRF）</h2>
+<p>将总体条件均值连成线，就得到了<strong>总体回归线</strong>，或<strong>总体回归曲线</strong>。</p>
+<p>对于总体而言，每一条件均值$E(Y|X_i)$都是$X_i$的一个函数，其中$X_i$是$X$的某个给定值。用符号表示为$$E(Y|X_i)=f(X_i)$$这个函数被称为条件期望函数（CEF）、<strong>总体回归函数</strong>（PRF）或总体回归（PR）。总体回归函数就是总体回归曲线的表达式。</p>
+<p>PRF采取何种形式，是一个重要的问题。我们可以假定PRF是$X_i$的线性函数，其形式为：$$E(Y|X_i)=\beta_1+\beta_2X_i$$其中$\beta$为回归系数。在回归分析中，我们通常根据对变量的观测，估计回归系数的值。</p>
+<p>上面我们构建了一个线性回归模型。“线性”一词有两种解释，一是对变量为线性，二是对参数为线性。在线性回归中，我们采用第二种解释，即线性回归是线性于参数$\beta$的回归。</p>
+<h2 id="PRF的随机设定">PRF的随机设定</h2>
+<p>给定$X_i$，总体的条件期望$E(Y|X_i)$是非随机的，但是给定$X_i$下个别的$Y_i$取值是围绕其条件均值随机分布的。通过引入离差，我们将随机因素囊括进PRF的设定中。离差的表达式为：$$u_i=Y_i-E(Y|X_i)$$稍作变形可得：$$Y_i=E(Y|X_i)+u_i$$我们可以发现，因变量$Y$的某一特定取值由两部分组成：<br>
+（1）系统性或确定性成分，即给定$X_i$下的条件均值；<br>
+（2）非系统性或随机性成分，即离差$u_i$，它是一个不可观测的随机变量，也叫作随机干扰项或随机误差项。</p>
+<p>通过对上式取期望，我们可以推出：$$E(u_i|X_i)=0$$</p>
+<p>随机干扰项$u_i$是模型遗漏的而又一起影响着因变量的全部变量的替代物。我们为什么不把这些变量清晰地引入模型中呢？理由是多方面的：<br>
+（一）<strong>理论的含糊性</strong>。即我们并不能明确其他影响因素是什么。<br>
+（二）<strong>数据的欠缺</strong>。即使我们明知有一些变量被模型所忽略了，但是由于得不到相关数据，我们别无选择，只能放弃将它们引入模型。<br>
+（三）<strong>核心变量与周边变量</strong>。变量的重要性有主次之别，对于那些对因变量影响很小的变量，我们不应该耗费不必要的成本将它们引入模型。<br>
+（四）<strong>内在的随机性</strong>。这里指的是纯粹的随机性，即使所有相关变量都引入模型，也无法消除。<br>
+（五）<strong>糟糕的替代变量</strong>。在实际研究中，模型中的变量无法准确观测，我们往往需要寻找替代变量，这就带来了测量误差问题，干扰项可以用来代表测量误差。<br>
+（六）<strong>错误的函数形式</strong>。我们常常无法确定解释变量和因变量之间的函数形式，这也会带来随机误差。</p>
+<h2 id="样本回归函数（SRF）">样本回归函数（SRF）</h2>
+<p>PRF是一个理想化的概念。实际上，人们很少得知他们研究的整个总体，通常只拥有总体的一个观测样本。这就需要通过SRF去估计PRF。</p>
+<p>样本回归函数（SRF）无非是把总体的情形对应到样本中来，把某些参数用估计量替代。注意，估计量是一种规则，告诉人们如何用手中的样本估计总体参数；在实际应用中，我们会算出估计值。估计量是随机的（因为抽样是随机的），但估计值是非随机的（给定抽样，则估计值也就随之确定）。</p>
+<p>表示估计量的方法，通常是在总体参数的符号上方加上一个 $\hat{}$ 符号，读作<em>hat</em>或者帽，比如离差的估计量——残差的表示方法为$\hat{u_i}$。但是，$\hat{Y_i}$是$E(Y|X_i)$的估计量，$Y_i$由实际情况给定，无所谓估计不估计。</p>
+<p>SRF是PRF的一个近似，我们进行回归分析的主要目的就是，采取一种尽量完美的规则，用SRF<sup class="footnote-ref"><a href="#fn1" id="fnref1">[1]</a></sup>：<br>
+$$Y_i=\hat{\beta_1}+\hat{\beta_2}X_i+\hat{u_i}$$<br>
+尽量精确地估计PRF：<br>
+$$Y_i=\beta_1+\beta_2X_i+u_i$$</p>
+<hr class="footnotes-sep">
+<section class="footnotes">
+<ol class="footnotes-list">
+<li id="fn1" class="footnote-item"><p>这是随机形式的SRF，还可以写成非随机形式（条件期望形式）：<br>
+$$\hat{Y_i}=\hat{\beta_1}+\hat{\beta_2}X_i$$ <a href="#fnref1" class="footnote-backref">↩︎</a></p>
+</li>
+</ol>
+</section>
+
+  
+
+
+  </article>
+  
+<div class="related-wrap reveal" id="read-next"><section class="body"><div class="item" id="prev"><div class="note">回顾上一篇</div><a href="/wiki/econometrics/econometrics-2.html">二、回归分析的性质</a></div><div class="item" id="next"></div></section></div>
+
+  
+
+  <div class='related-wrap md-text reveal' id="comments">
+    <section class='header cmt-title cap theme'>
+      快来参与讨论吧
+    </section>
+    <section class='body cmt-body giscus'>
+      
+
+<svg class="loading" style="vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg>
+
+<div id="giscus" data-repo="gamandromeda/gamandromeda.github.io" data-repo-id="R_kgDOJXajHQ" data-category="Announcements" data-category-id="DIC_kwDOJXajHc4CV7D0" data-mapping="pathname" data-strict="0" data-reactions-enabled="1" data-emit-metadata="0" data-input-position="top" data-theme="preferred_color_scheme" data-lang="zh-CN" data-loading="lazy" crossorigin="anonymous"></div>
+
+    </section>
+  </div>
+
+
+
+
+      
+<footer class="page-footer reveal fs12"><hr><div class="sitemap"><div class="sitemap-group"><span class="fs14">博客</span><a href="/">文章</a><a href="/categories/">分类</a><a href="/tags/">标签</a><a href="/archives/">归档</a></div><div class="sitemap-group"><span class="fs14">项目</span><a href="/wiki/econometrics/">计量经济学基础</a></div><div class="sitemap-group"><span class="fs14">社交</span><a href="/sites/">网站黄页</a></div><div class="sitemap-group"><span class="fs14">更多</span><a href="/about/">关于</a><a href="/contact/">联系方式</a></div></div><div class="text"><p><a href="mailto:gamandromeda@gmail.com">@让平</a> 版权所有，未经许可禁止转载。<br>
+本站始建于2022年6月15日，重建于2023年4月20日。<br>
+自2023年4月25日起使用<a target="_blank" rel="noopener" href="https://github.com/xaoxuu/hexo-theme-stellar">Stellar</a>主题。</p>
+</div></footer>
+
+      <div class='float-panel mobile-only blur' style='display:none'>
+  <button type='button' class='sidebar-toggle mobile' onclick='sidebar.toggle()'>
+    <svg class="icon" style="width: 1em; height: 1em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="15301"><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 2.3 26.8 24.6 47.5 51.6 47.6h416.5v4z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15302"></path><path d="M566.407 808.3c26.9-0.1 49.3-20.8 51.6-47.6-1.9-27.7-23.9-49.7-51.6-51.6h-412.6c-28.2-1.4-52.6 19.5-55.5 47.6 1.9 27.7 23.9 49.7 51.6 51.6h416.5z m309.3-249.9c26.9-0.1 49.3-20.8 51.6-47.6-2.2-26.8-24.6-47.5-51.6-47.6h-721.9c-27.7-2.8-52.5 17.4-55.3 45.1-0.1 0.8-0.1 1.7-0.2 2.5 0.9 27.2 23.6 48.5 50.7 47.6H875.707z m-103.1-245.9c26.9-0.1 49.3-20.8 51.6-47.6-0.4-28.3-23.2-51.1-51.5-51.6h-618.9c-29.5-1.1-54.3 21.9-55.5 51.4v0.2c1.4 27.8 25.2 49.2 53 47.8 0.8 0 1.7-0.1 2.5-0.2h618.8z" p-id="15303"></path></svg>
+  </button>
+</div>
+
+    </div>
+  </div>
+  <div class='scripts'>
+    <script type="text/javascript">
+  const stellar = {
+    // 懒加载 css https://github.com/filamentgroup/loadCSS
+    loadCSS: (href, before, media, attributes) => {
+      var doc = window.document;
+      var ss = doc.createElement("link");
+      var ref;
+      if (before) {
+        ref = before;
+      } else {
+        var refs = (doc.body || doc.getElementsByTagName("head")[0]).childNodes;
+        ref = refs[refs.length - 1];
+      }
+      var sheets = doc.styleSheets;
+      if (attributes) {
+        for (var attributeName in attributes) {
+          if (attributes.hasOwnProperty(attributeName)) {
+            ss.setAttribute(attributeName, attributes[attributeName]);
+          }
+        }
+      }
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      function ready(cb) {
+        if (doc.body) {
+          return cb();
+        }
+        setTimeout(function () {
+          ready(cb);
+        });
+      }
+      ready(function () {
+        ref.parentNode.insertBefore(ss, before ? ref : ref.nextSibling);
+      });
+      var onloadcssdefined = function (cb) {
+        var resolvedHref = ss.href;
+        var i = sheets.length;
+        while (i--) {
+          if (sheets[i].href === resolvedHref) {
+            return cb();
+          }
+        }
+        setTimeout(function () {
+          onloadcssdefined(cb);
+        });
+      };
+      function loadCB() {
+        if (ss.addEventListener) {
+          ss.removeEventListener("load", loadCB);
+        }
+        ss.media = media || "all";
+      }
+      if (ss.addEventListener) {
+        ss.addEventListener("load", loadCB);
+      }
+      ss.onloadcssdefined = onloadcssdefined;
+      onloadcssdefined(loadCB);
+      return ss;
+    },
+
+    // 从 butterfly 和 volantis 获得灵感
+    loadScript: (src, opt) => new Promise((resolve, reject) => {
+      var script = document.createElement('script');
+      script.src = src;
+      if (opt) {
+        for (let key of Object.keys(opt)) {
+          script[key] = opt[key]
+        }
+      } else {
+        // 默认异步，如果需要同步，第二个参数传入 {} 即可
+        script.async = true
+      }
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    }),
+
+    // https://github.com/jerryc127/hexo-theme-butterfly
+    jQuery: (fn) => {
+      if (typeof jQuery === 'undefined') {
+        stellar.loadScript(stellar.plugins.jQuery).then(fn)
+      } else {
+        fn()
+      }
+    }
+  };
+  stellar.version = '1.18.5';
+  stellar.github = 'https://github.com/xaoxuu/hexo-theme-stellar/tree/1.18.5';
+  stellar.config = {
+    date_suffix: {
+      just: '刚刚',
+      min: '分钟前',
+      hour: '小时前',
+      day: '天前',
+      month: '个月前',
+    },
+  };
+
+  // required plugins (only load if needs)
+  stellar.plugins = {
+    jQuery: 'https://gcore.jsdelivr.net/npm/jquery@3.6.2/dist/jquery.min.js'
+  };
+
+  if ('local_search') {
+    stellar.search = {};
+    stellar.search.service = 'local_search';
+    if (stellar.search.service == 'local_search') {
+      let service_obj = Object.assign({}, {"field":"all","path":"/search.json","content":true,"sort":"-date"});
+      stellar.search[stellar.search.service] = service_obj;
+    }
+  }
+
+  // stellar js
+  stellar.plugins.stellar = Object.assign({"sites":"/js/plugins/sites.js","friends":"/js/plugins/friends.js","ghinfo":"/js/plugins/ghinfo.js","timeline":"/js/plugins/timeline.js","linkcard":"/js/plugins/linkcard.js","fcircle":"/js/plugins/fcircle.js","weibo":"/js/plugins/weibo.js"});
+
+  stellar.plugins.marked = Object.assign("https://cdn.bootcdn.net/ajax/libs/marked/4.0.18/marked.min.js");
+  // optional plugins
+  if ('true' == 'true') {
+    stellar.plugins.lazyload = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js","transition":"blur"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.swiper = Object.assign({"enable":true,"css":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.css","js":"https://unpkg.com/swiper@8.4.5/swiper-bundle.min.js"});
+  }
+  if ('' == 'true') {
+    stellar.plugins.scrollreveal = Object.assign({"enable":null,"js":"https://gcore.jsdelivr.net/npm/scrollreveal@4.0.9/dist/scrollreveal.min.js","distance":"8px","duration":500,"interval":100,"scale":1});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.preload = Object.assign({"enable":true,"service":"flying_pages","instant_page":"https://gcore.jsdelivr.net/gh/volantis-x/cdn-volantis@4.1.2/js/instant_page.js","flying_pages":"https://gcore.jsdelivr.net/gh/gijo-varghese/flying-pages@2.1.2/flying-pages.min.js"});
+  }
+  if ('true' == 'true') {
+    stellar.plugins.fancybox = Object.assign({"enable":true,"js":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js","css":"https://gcore.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css","selector":".swiper-slide img"});
+  }
+  if ('false' == 'true') {
+    stellar.plugins.heti = Object.assign({"enable":false,"css":"https://unpkg.com/heti@0.9.2/umd/heti.min.css","js":"https://unpkg.com/heti@0.9.2/umd/heti-addon.min.js"});
+  }
+</script>
+
+<!-- required -->
+
+  
+<script src="/js/main.js" async></script>
+
+
+
+<!-- optional -->
+
+  <script>
+  function loadJS() {
+    const els = document.querySelectorAll("#comments #giscus");
+    if (els.length === 0) return;
+    els.forEach((el, i) => {
+      try {
+        el.innerHTML = '';
+      } catch (error) {
+        console.log(error);
+      }
+      var script = document.createElement('script');
+      script.src = 'https://giscus.app/client.js';
+      script.async = true;
+      for (let key of Object.keys(el.attributes)) {
+        let attr = el.attributes[key];
+        if (['class', 'id'].includes(attr.name) === false) {
+          script.setAttribute(attr.name, attr.value);
+        }
+      }
+      el.appendChild(script);
+    });
+  }
+  window.addEventListener('DOMContentLoaded', (event) => {
+    loadJS();
+  });
+</script>
+
+
+
+
+<!-- inject -->
+
+
+  </div>
+</body>
+</html>
