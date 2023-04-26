@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>让平庐</title>
+  <title>让平之窗</title>
   
-  <subtitle>强梁者不得其死</subtitle>
+  <subtitle>强梁者不得其死，吾将以为教父。</subtitle>
   <link href="http://gamandromeda.github.io/atom.xml" rel="self"/>
   
   <link href="http://gamandromeda.github.io/"/>
-  <updated>2023-04-23T14:05:29.193Z</updated>
+  <updated>2023-04-23T06:58:43.885Z</updated>
   <id>http://gamandromeda.github.io/</id>
   
   <author>
@@ -15,35 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>日记其一：苟日新，日日新，又日新</title>
-    <link href="http://gamandromeda.github.io/posts/dairy-1/"/>
-    <id>http://gamandromeda.github.io/posts/dairy-1/</id>
-    <published>2023-04-23T14:05:29.000Z</published>
-    <updated>2023-04-23T14:05:29.193Z</updated>
-    
-    <content type="html"><![CDATA[<center>公元2023年4月23日</center><center>农历三月初四</center><center>第十教学周 星期日</center><center>阴转小雨</center><center>写于交大闵行校区包玉刚图书馆</center><br><p>今天调休。很多人抱怨调休，打乱了原本的生活节奏。不过我本身就无节奏可言，自然无所谓打乱，调休于我没什么影响。说到此，不禁又觉得悔恨，十分慌张，感觉蹉跎了许多岁月，每日不知都干了些什么，不像别人，有着十分明确的规划。</p><p>今天博客一口气更新了三篇文章，有一篇文章是之前就写了不少的，所以准确来说是两篇半。如果再加上这篇日记，就是三点半。有点过于高产了，怕是过犹不及。以后课业得加把劲了，课业之外的琐事，少更新一点，等将来学有余力了，再多扩充一下也不迟。</p><p>给博客新增了订阅功能，手机上用Feeder app接收，很实用。但是想必没多少人会订阅。但是我还是坚持既定的原则——草木有本心，何求美人折？管他有没有人看，我自己照写不误。</p><p>课业压力很大。基础不牢，地动山摇。而且我怀疑我是没有什么学习天赋的，原来仅有的一点应试天赋，到现在都所剩无几了。学习起来很吃力。我应该多做一些探索，调整一下学习方法。有的老师上课实在听不懂，没办法，自学吧。</p><p>总感觉找不到人生的价值。不管怎么样，我要做一个言行一致、知行合一的人。我的自我革命的全过程，要在博客上记录，要充分发挥博客的监督功能，督促我革故鼎新。</p><p>很晚了，还有作业要写，就写这么点吧。明天一定要去跑步。</p><p>最后，吟诵一句古文，作为结语，也当做日记的标题：</p><blockquote><p>苟日新，日日新，又日新。</p></blockquote>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;center&gt;公元2023年4月23日&lt;/center&gt;
-&lt;center&gt;农历三月初四&lt;/center&gt;
-&lt;center&gt;第十教学周 星期日&lt;/center&gt;
-&lt;center&gt;阴转小雨&lt;/center&gt;
-&lt;center&gt;写于交大闵行校区包玉刚图书馆&lt;/center&gt;&lt;br&gt;
-&lt;</summary>
-      
-    
-    
-    
-    <category term="日记" scheme="http://gamandromeda.github.io/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-    <category term="日记" scheme="http://gamandromeda.github.io/tags/%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
   
   <entry>
     <title>列表里的歌，随过往流动——我的网易云音乐十年听歌报告</title>
@@ -102,63 +73,6 @@
     <category term="经济学" scheme="http://gamandromeda.github.io/tags/%E7%BB%8F%E6%B5%8E%E5%AD%A6/"/>
     
     <category term="舆论" scheme="http://gamandromeda.github.io/tags/%E8%88%86%E8%AE%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【建站日志】更换字体，兼谈好友停更</title>
-    <link href="http://gamandromeda.github.io/posts/sitelog-2/"/>
-    <id>http://gamandromeda.github.io/posts/sitelog-2/</id>
-    <published>2023-04-21T03:45:57.000Z</published>
-    <updated>2023-04-21T04:07:24.361Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>这篇文章主要谈两件事情，其一是网上让平庐成功更换了字体，在这里记录一下方法；其二是有一位一起搭博客的朋友决定停更，有感而发，稍微说两句。</p></blockquote><h2 id="更换字体">更换字体</h2><p>Fluid主题开发者并不建议引入外部字体，因为字体一般较大。若要使用系统自带字体，只需要在<strong>主题配置</strong>文件（即<code>_config.fluid.yml</code>）中修改下面的配置即可：</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">font:</span></span><br><span class="line">    <span class="attr">font family:</span> <span class="string">&quot;华文楷体&quot;</span> <span class="comment"># 在此处加上要使用的字体，这里以华文楷体为例</span></span><br></pre></td></tr></table></figure><p>若要引入外部字体，可以考虑直接引用谷歌字体等网站中的资源，而不用下载字体文件，加载速度也往往快一些。和使用系统自带字体一样，需要修改<strong>主题配置</strong>文件中的<code>font family</code>，此外还需要在<strong>主题配置</strong>文件中增添以下内容（顶格书写）：</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">custom_head:</span> <span class="string">&lt;link</span> <span class="string">rel=&quot;stylesheet&quot;</span> <span class="string">href=&quot;https://fonts.googleapis.com/css?family=Noto+Serif+SC:500&quot;&gt;</span></span><br><span class="line"><span class="comment"># 此处以思源宋体Medium为例，href中的内容请根据需要引入的字体修改，请自行在互联网上搜索相关资源</span></span><br></pre></td></tr></table></figure><h2 id="谈好友停更">谈好友停更</h2><p>最近，惊闻好友Serencounts决定停更其博客两个月，我对此深表惋惜。Serencounts在计算机技术和网页设计方面颇有造诣，在博客搭建上也给过我很多有益的启发。如今他已停更，我只能踽踽独行，一个人坚持把博客做下去。</p><p>古之学者为己，今之学者为人。我想，写博客首先应该是为己，是要记录个人和社会两个历史，敦促个人的学习和修养，而不应该是在别人面前炫耀。所以，即使没有人来看我的博客，我依旧会按照建站三大宗旨，驰而不息地把博客更新下去。</p><p>当然，还是应该切记不要为了写博客而写博客。只有生活足够充盈，博客才能够言之有物，才能够色彩斑斓。首先是生活的改造，其次是表达的丰富。前者做到了，后者就能自然而然实现。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;这篇文章主要谈两件事情，其一是网上让平庐成功更换了字体，在这里记录一下方法；其二是有一位一起搭博客的朋友决定停更，有感而发，稍微说两句。&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;更换字体&quot;&gt;更换字体&lt;/h2&gt;
-&lt;p&gt;Fluid主题开发者</summary>
-      
-    
-    
-    
-    <category term="建站日志" scheme="http://gamandromeda.github.io/categories/%E5%BB%BA%E7%AB%99%E6%97%A5%E5%BF%97/"/>
-    
-    
-    <category term="字体" scheme="http://gamandromeda.github.io/tags/%E5%AD%97%E4%BD%93/"/>
-    
-    <category term="停更" scheme="http://gamandromeda.github.io/tags/%E5%81%9C%E6%9B%B4/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>【建站日志】giscus评论系统故障</title>
-    <link href="http://gamandromeda.github.io/posts/sitelog-1/"/>
-    <id>http://gamandromeda.github.io/posts/sitelog-1/</id>
-    <published>2023-04-20T16:20:00.000Z</published>
-    <updated>2023-04-25T12:39:23.430Z</updated>
-    
-    <content type="html"><![CDATA[<p>2023年4月20日夜至21日凌晨，我在测试giscus评论系统，发现如下故障：</p><p>（一）发帖自动顶贴，且不可取消；<br>（二）发帖有延迟，延迟期间多次发帖会在仓库的讨论区新开多个讨论。延迟期结束后，会显示最后一个讨论。</p><p>尚未查明故障原因。需要做进一步测试。</p><hr><p><strong>附件：为什么采用giscus评论系统？</strong><br>一开始我采用的是Waline评论系统，但是该系统在中国大陆无法正常访问，只能放弃。现在暂时使用giscus评论系统，不过该系统需要Github账号登录，对部分访客来说殊为不便，后期可能会更换新的评论系统。主要困难是我的网站用的是github.io域名，没有独立域名，有的功能需要独立域名才能实现。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;2023年4月20日夜至21日凌晨，我在测试giscus评论系统，发现如下故障：&lt;/p&gt;
-&lt;p&gt;（一）发帖自动顶贴，且不可取消；&lt;br&gt;
-（二）发帖有延迟，延迟期间多次发帖会在仓库的讨论区新开多个讨论。延迟期结束后，会显示最后一个讨论。&lt;/p&gt;
-&lt;p&gt;尚未查明故障原因。需要</summary>
-      
-    
-    
-    
-    <category term="建站日志" scheme="http://gamandromeda.github.io/categories/%E5%BB%BA%E7%AB%99%E6%97%A5%E5%BF%97/"/>
-    
-    
-    <category term="giscus" scheme="http://gamandromeda.github.io/tags/giscus/"/>
     
   </entry>
   
